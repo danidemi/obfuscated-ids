@@ -23,7 +23,7 @@ public class HashIdObfuscatorTest {
     @Test
     public void shouldRefuseUnsupportedIds() {
 
-        assertThatThrownBy( () -> new HashIdObfuscator().obfuscate(-1) )
+        assertThatThrownBy( () -> new HashIdObfuscator().disguise(-1) )
             .isInstanceOf( UnsupportedIdException.class )
             .hasMessageContaining("-1");
 
@@ -33,7 +33,7 @@ public class HashIdObfuscatorTest {
     public void shouldUseADefaultReasonableSetUpWithEmptyConstructor() {
 
         String aTypicalYouTubeHash = "2BHah7n8ziI";
-        assertThat( new HashIdObfuscator().obfuscate(123345).length(), is(aTypicalYouTubeHash.length()) );
+        assertThat( new HashIdObfuscator().disguise(123345).length(), is(aTypicalYouTubeHash.length()) );
 
     }
 
@@ -52,7 +52,7 @@ public class HashIdObfuscatorTest {
 
         for(long i = 0; i<10000; i = i+7 ) {
 
-            String obfuscated = sut.obfuscate(i);
+            String obfuscated = sut.disguise(i);
             long decoded = sut.decode(obfuscated);
 
             assertThat(obfuscated, not( equalTo( valueOf(i) )));

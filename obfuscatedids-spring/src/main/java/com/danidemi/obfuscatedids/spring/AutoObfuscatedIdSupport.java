@@ -33,7 +33,12 @@ import java.util.Locale;
 
 public class AutoObfuscatedIdSupport extends PropertyEditorSupport implements Formatter<AutoObfuscatedId> {
 
-    private IdObfuscator obfuscator;
+    private final IdObfuscator obfuscator;
+
+    public AutoObfuscatedIdSupport(final IdObfuscator obfuscator) {
+        if(obfuscator == null) throw new IllegalArgumentException();
+        this.obfuscator = obfuscator;
+    }
 
     // PropertyEditorSupport =============================
     public void setAsText(String text) throws IllegalArgumentException {

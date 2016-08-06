@@ -51,13 +51,13 @@ public class NegativeIdsObfuscatorTest {
         // are obfuscated
         int numberOfTests = 10000;
         for(int i = 1; i<= numberOfTests; i++){
-            sut.obfuscate(i);
-            sut.obfuscate(-i);
+            sut.disguise(i);
+            sut.disguise(-i);
         }
 
         // then
         // ...the delegate should be invoked for each number
-        verify(delegate, times(numberOfTests*2)).obfuscate( longArg.capture() );
+        verify(delegate, times(numberOfTests*2)).disguise( longArg.capture() );
 
         List<Long> allObfuscatedIds = longArg.getAllValues();
 
@@ -73,16 +73,16 @@ public class NegativeIdsObfuscatorTest {
     public void shouldPassTheRightValue() {
 
         // when
-        sut.obfuscate(0);
-        sut.obfuscate(1);
-        sut.obfuscate(-1);
-        sut.obfuscate(2);
-        sut.obfuscate(-2);
-        sut.obfuscate(100);
-        sut.obfuscate(-100);
+        sut.disguise(0);
+        sut.disguise(1);
+        sut.disguise(-1);
+        sut.disguise(2);
+        sut.disguise(-2);
+        sut.disguise(100);
+        sut.disguise(-100);
 
         // then
-        verify(delegate, times(7)).obfuscate(longArg.capture());
+        verify(delegate, times(7)).disguise(longArg.capture());
 
         assertThat(longArg.getAllValues().get(0), is(0L));
         assertThat(longArg.getAllValues().get(1), is(2L));

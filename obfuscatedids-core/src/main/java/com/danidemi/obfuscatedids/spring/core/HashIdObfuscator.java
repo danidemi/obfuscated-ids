@@ -18,7 +18,7 @@ public class HashIdObfuscator implements IdObfuscator {
     }
 
     @Override
-    public String obfuscate(long id) {
+    public String disguise(long id) {
 
         if(id<0) throw new UnsupportedIdException(id);
 
@@ -26,12 +26,12 @@ public class HashIdObfuscator implements IdObfuscator {
     }
 
     @Override
-    public long decode(String obfuscatedId) {
+    public long decode(String disguisedId) {
 
-        long[] decodeds = hashids.decode(obfuscatedId);
+        long[] decodeds = hashids.decode(disguisedId);
 
         if(decodeds == null || decodeds.length != 1){
-            throw new InvalidObfuscatedIdException( format("Illegal ID '%s'.", obfuscatedId) );
+            throw new InvalidObfuscatedIdException( format("Illegal ID '%s'.", disguisedId) );
         }
 
         return decodeds[0];

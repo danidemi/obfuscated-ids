@@ -14,7 +14,7 @@ public class UnobfuscatingObfuscatorTest {
 
         for(long i=-1000; i<=2000; i++){
 
-            String obfuscated = sut.obfuscate(i);
+            String obfuscated = sut.disguise(i);
 
             assertThat( Long.parseLong(obfuscated), is(i) );
             assertThat( sut.decode(obfuscated), is(i));

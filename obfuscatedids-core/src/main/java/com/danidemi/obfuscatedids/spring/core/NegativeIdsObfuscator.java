@@ -9,15 +9,15 @@ public class NegativeIdsObfuscator implements IdObfuscator {
     }
 
     @Override
-    public String obfuscate(long id) {
+    public String disguise(long id) {
         long newId = id << 1;
         newId = newId < 0 ? Math.abs(newId)-1 : newId;
-        return delegate.obfuscate(newId);
+        return delegate.disguise(newId);
     }
 
     @Override
-    public long decode(String obfuscatedId) {
-        long decoded = delegate.decode(obfuscatedId);
+    public long decode(String disguisedId) {
+        long decoded = delegate.decode(disguisedId);
         return decoded % 2 == 0 ? decoded >> 1 : -1 * ((decoded - 1) >> 1);
         //return decoded % 2 == 0 ? decoded >> 1 : -1 * ((decoded - 1) >> 1);
     }

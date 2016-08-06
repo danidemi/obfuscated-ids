@@ -5,16 +5,16 @@ public class UnobfuscatingObfuscator implements IdObfuscator {
 
 
     @Override
-    public String obfuscate(long id) {
+    public String disguise(long id) {
         return String.valueOf(id);
     }
 
     @Override
-    public long decode(String obfuscatedId) {
+    public long decode(String disguisedId) {
         try {
-            return Long.valueOf(obfuscatedId);
+            return Long.valueOf(disguisedId);
         } catch (NumberFormatException e) {
-            throw new InvalidObfuscatedIdException(obfuscatedId);
+            throw new InvalidObfuscatedIdException(disguisedId);
         }
     }
 
