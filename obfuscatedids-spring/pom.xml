@@ -26,5 +26,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.danidemi.obfuscatedids</groupId>
+            <artifactId>obfuscatedids-core</artifactId>
+        </dependency>
     </dependencies>
 </project>

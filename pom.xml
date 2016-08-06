@@ -38,6 +38,16 @@
                 <artifactId>hashids</artifactId>
                 <version>${hashids.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.danidemi.obfuscatedids</groupId>
+                <artifactId>obfuscatedids-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.danidemi.obfuscatedids</groupId>
+                <artifactId>obfuscatedids-spring</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
