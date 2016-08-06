@@ -22,44 +22,37 @@
  * SOFTWARE.
  ******************************************************************************/
 
-package com.danidemi.obfuscatedids.spring;
+package com.danidemi.obfuscatedids.core;
 
-import com.danidemi.obfuscatedids.core.IdObfuscator;
-import org.springframework.format.Formatter;
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
 
-import java.beans.PropertyEditorSupport;
-import java.text.ParseException;
-import java.util.Locale;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-public class AutoObfuscatedIdSupport extends PropertyEditorSupport implements Formatter<AutoObfuscatedId> {
+public class UnobfuscatingObfuscatorTest {
 
-    private final IdObfuscator obfuscator;
+    UnobfuscatingObfuscator sut = new UnobfuscatingObfuscator();
 
-    public AutoObfuscatedIdSupport(final IdObfuscator obfuscator) {
-        if(obfuscator == null) throw new IllegalArgumentException();
-        this.obfuscator = obfuscator;
+    @Test public void shouldJustConvertInString() {
+
+        for(long i=-1000; i<=2000; i++){
+
+            String obfuscated = sut.disguise(i);
+
+            assertThat( Long.parseLong(obfuscated), is(i) );
+            assertThat( sut.decode(obfuscated), is(i));
+
+        }
+
     }
 
-    // PropertyEditorSupport =============================
-    public void setAsText(String text) throws IllegalArgumentException {
-        this.setValue(
-                new AutoObfuscatedId(text, obfuscator.decode( text ))
-        );
+    @Test public void shouldThrowException() {
+
+        Assertions.assertThatThrownBy( () -> sut.decode("###") )
+                .isInstanceOf(InvalidObfuscatedIdException.class)
+                .hasMessageContaining("###");
+
     }
 
-    public String getAsText() {
-        AutoObfuscatedId value = (AutoObfuscatedId) this.getValue();
-        return value != null ? value.toString() : "";
-    }
-
-    // Formatter =============================
-    @Override
-    public AutoObfuscatedId parse(String s, Locale locale) throws ParseException {
-        return new AutoObfuscatedId(s, obfuscator.decode(s));
-    }
-
-    @Override
-    public String print(AutoObfuscatedId obfuscatedId, Locale locale) {
-        return obfuscatedId.toString();
-    }
 }

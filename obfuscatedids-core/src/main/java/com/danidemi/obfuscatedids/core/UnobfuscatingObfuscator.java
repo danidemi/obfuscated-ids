@@ -22,44 +22,24 @@
  * SOFTWARE.
  ******************************************************************************/
 
-package com.danidemi.obfuscatedids.spring;
+package com.danidemi.obfuscatedids.core;
 
-import com.danidemi.obfuscatedids.core.IdObfuscator;
-import org.springframework.format.Formatter;
 
-import java.beans.PropertyEditorSupport;
-import java.text.ParseException;
-import java.util.Locale;
+public class UnobfuscatingObfuscator implements IdObfuscator {
 
-public class AutoObfuscatedIdSupport extends PropertyEditorSupport implements Formatter<AutoObfuscatedId> {
 
-    private final IdObfuscator obfuscator;
-
-    public AutoObfuscatedIdSupport(final IdObfuscator obfuscator) {
-        if(obfuscator == null) throw new IllegalArgumentException();
-        this.obfuscator = obfuscator;
-    }
-
-    // PropertyEditorSupport =============================
-    public void setAsText(String text) throws IllegalArgumentException {
-        this.setValue(
-                new AutoObfuscatedId(text, obfuscator.decode( text ))
-        );
-    }
-
-    public String getAsText() {
-        AutoObfuscatedId value = (AutoObfuscatedId) this.getValue();
-        return value != null ? value.toString() : "";
-    }
-
-    // Formatter =============================
     @Override
-    public AutoObfuscatedId parse(String s, Locale locale) throws ParseException {
-        return new AutoObfuscatedId(s, obfuscator.decode(s));
+    public String disguise(long id) {
+        return String.valueOf(id);
     }
 
     @Override
-    public String print(AutoObfuscatedId obfuscatedId, Locale locale) {
-        return obfuscatedId.toString();
+    public long decode(String disguisedId) {
+        try {
+            return Long.valueOf(disguisedId);
+        } catch (NumberFormatException e) {
+            throw new InvalidObfuscatedIdException(disguisedId);
+        }
     }
+
 }

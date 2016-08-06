@@ -1,6 +1,6 @@
 package com.danidemi.obfuscatedids.spring;
 
-import com.danidemi.obfuscatedids.spring.core.UnobfuscatingObfuscator;
+import com.danidemi.obfuscatedids.core.UnobfuscatingObfuscator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

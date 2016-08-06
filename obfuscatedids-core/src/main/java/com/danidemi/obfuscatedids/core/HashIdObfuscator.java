@@ -22,44 +22,43 @@
  * SOFTWARE.
  ******************************************************************************/
 
-package com.danidemi.obfuscatedids.spring;
+package com.danidemi.obfuscatedids.core;
 
-import com.danidemi.obfuscatedids.core.IdObfuscator;
-import org.springframework.format.Formatter;
 
-import java.beans.PropertyEditorSupport;
-import java.text.ParseException;
-import java.util.Locale;
+import org.hashids.Hashids;
 
-public class AutoObfuscatedIdSupport extends PropertyEditorSupport implements Formatter<AutoObfuscatedId> {
+import static java.lang.String.format;
 
-    private final IdObfuscator obfuscator;
+public class HashIdObfuscator implements IdObfuscator {
 
-    public AutoObfuscatedIdSupport(final IdObfuscator obfuscator) {
-        if(obfuscator == null) throw new IllegalArgumentException();
-        this.obfuscator = obfuscator;
+    private final Hashids hashids;
+
+    public HashIdObfuscator(Hashids hashids) {
+        this.hashids = hashids;
     }
 
-    // PropertyEditorSupport =============================
-    public void setAsText(String text) throws IllegalArgumentException {
-        this.setValue(
-                new AutoObfuscatedId(text, obfuscator.decode( text ))
-        );
-    }
-
-    public String getAsText() {
-        AutoObfuscatedId value = (AutoObfuscatedId) this.getValue();
-        return value != null ? value.toString() : "";
-    }
-
-    // Formatter =============================
-    @Override
-    public AutoObfuscatedId parse(String s, Locale locale) throws ParseException {
-        return new AutoObfuscatedId(s, obfuscator.decode(s));
+    public HashIdObfuscator() {
+        this.hashids = new Hashids("xnzmQJi0dZwNuXZbML7nCsKwZ1Cn1rppPlJm7xDob4koRTRsyLRO5dV7g8r5NMUlKf8tIspy3dbWuzPt", 11);
     }
 
     @Override
-    public String print(AutoObfuscatedId obfuscatedId, Locale locale) {
-        return obfuscatedId.toString();
+    public String disguise(long id) {
+
+        if(id<0) throw new UnsupportedIdException(id);
+
+        return hashids.encode( id );
     }
+
+    @Override
+    public long decode(String disguisedId) {
+
+        long[] decodeds = hashids.decode(disguisedId);
+
+        if(decodeds == null || decodeds.length != 1){
+            throw new InvalidObfuscatedIdException( format("Illegal ID '%s'.", disguisedId) );
+        }
+
+        return decodeds[0];
+    }
+
 }

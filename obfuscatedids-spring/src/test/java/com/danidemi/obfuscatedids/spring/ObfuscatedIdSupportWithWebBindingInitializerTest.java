@@ -24,7 +24,7 @@
 
 package com.danidemi.obfuscatedids.spring;
 
-import com.danidemi.obfuscatedids.spring.core.UnobfuscatingObfuscator;
+import com.danidemi.obfuscatedids.core.UnobfuscatingObfuscator;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
