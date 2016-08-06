@@ -11,10 +11,7 @@
         <module>obfuscatedids-spring</module>
     </modules>
     <packaging>pom</packaging>
-
-    <name>obfuscatedids</name>
-    <description></description>
-
+    
     <name>${project.groupId}:${project.artifactId}</name>
     <description>obfuscatedids: avoid exposing your internal IDs.</description>
     <url>https://github.com/danidemi/obfuscated-ids</url>
