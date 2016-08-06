@@ -12,7 +12,24 @@
     <artifactId>obfuscatedids-core</artifactId>
     <packaging>jar</packaging>
 
-    <description>obfuscatedids :: core :: Avoid exposing your internal IDs.</description>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>obfuscatedids core module.</description>
+    <url>https://github.com/danidemi/obfuscated-ids</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Daniele Demichelis</name>
+            <email>demichelis@danidemi.com</email>
+            <organization>Studio DaniDemi</organization>
+            <organizationUrl>http://www.danidemi.com</organizationUrl>
+        </developer>
+    </developers>
 
     <dependencies>
         <dependency>

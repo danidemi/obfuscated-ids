@@ -10,8 +10,9 @@
     <artifactId>obfuscatedids-hashid</artifactId>
     <packaging>jar</packaging>
 
-    <name>obfuscatedids-hashids</name>
-    <url>http://maven.apache.org</url>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>obfuscatedids integration for hashid.</description>
+    <url>https://github.com/danidemi/obfuscated-ids</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
