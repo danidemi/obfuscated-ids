@@ -12,6 +12,8 @@
     <artifactId>obfuscatedids-core</artifactId>
     <packaging>jar</packaging>
 
+    <description>obfuscatedids :: core :: Avoid exposing your internal IDs.</description>
+
     <dependencies>
         <dependency>
             <groupId>org.hashids</groupId>

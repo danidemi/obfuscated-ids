@@ -7,12 +7,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>obfuscatedids-spring</artifactId>
+    <artifactId>obfuscatedids-hashid</artifactId>
     <packaging>jar</packaging>
 
-    <name>obfuscatedids-spring</name>
+    <name>obfuscatedids-hashids</name>
     <url>http://maven.apache.org</url>
-    <description>obfuscatedids :: spring :: Spring Framework integration for obfuscatedids.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,20 +19,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.hashids</groupId>
+            <artifactId>hashids</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.danidemi.obfuscatedids</groupId>
             <artifactId>obfuscatedids-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.danidemi.obfuscatedids</groupId>
-            <artifactId>obfuscatedids-hashid</artifactId>
         </dependency>
     </dependencies>
 </project>
