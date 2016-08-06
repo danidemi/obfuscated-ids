@@ -1,7 +1,3 @@
-package com.danidemi.obfuscatedids.spring;
-
-import java.beans.PropertyEditorSupport;
-
 /*******************************************************************************
  * MIT License
  *
@@ -26,17 +22,34 @@ import java.beans.PropertyEditorSupport;
  * SOFTWARE.
  ******************************************************************************/
 
-public class ObfuscatedIdPropertyEditor extends PropertyEditorSupport {
+package com.danidemi.obfuscatedids.spring;
 
-    public void setAsText(String text) throws IllegalArgumentException {
-        this.setValue(
-                new ObfuscatedId(text)
-        );
+abstract class AbstractCharSequence implements CharSequence {
+
+    protected final String obfuscatedId;
+
+    protected AbstractCharSequence(String obfuscatedId) {
+        this.obfuscatedId = obfuscatedId;
     }
 
-    public String getAsText() {
-        ObfuscatedId value = (ObfuscatedId) this.getValue();
-        return value != null ? value.toString() : "";
+    @Override
+    public int length() {
+        return obfuscatedId.length();
+    }
+
+    @Override
+    public char charAt(int index) {
+        return obfuscatedId.charAt(index);
+    }
+
+    @Override
+    public CharSequence subSequence(int start, int end) {
+        return obfuscatedId.subSequence(start, end);
+    }
+
+    @Override
+    public String toString() {
+        return obfuscatedId;
     }
 
 }
