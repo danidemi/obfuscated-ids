@@ -31,9 +31,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git://github.com/danidemi/obfuscated-ids.git</connection>
-        <developerConnection>scm:git:ssh://github.com:danidemi/obfuscated-ids.git</developerConnection>
-        <url>https://github.com/danidemi/obfuscated-ids/tree/master</url>
+        <connection>scm:git:https://github.com/danidemi/obfuscated-ids</connection>
+        <developerConnection>scm:git:https://github.com/danidemi/obfuscated-ids</developerConnection>
+        <url>https://github.com/danidemi/obfuscated-ids</url>
     </scm>
 
 
