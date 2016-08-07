@@ -24,6 +24,11 @@
 
 package com.danidemi.obfuscatedids.core;
 
+/**
+ * A service that is able to disguise an ID and decode it back.
+ * The contract for {@link IdObfuscator}, is that
+ * {@code decode(disguise(ID)).equals(ID)} is true for every {@code ID}.
+ */
 public interface IdObfuscator {
     String disguise(long id);
     long decode(String disguisedId);
