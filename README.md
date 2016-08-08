@@ -1,3 +1,6 @@
+
+![Build status on https://travis-ci.com/](https://api.travis-ci.org/danidemi/obfuscated-ids.svg)
+
 Obfuscated-IDs
 ==============
 Never expose your database IDs again.
