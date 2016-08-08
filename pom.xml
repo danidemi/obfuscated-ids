@@ -8,10 +8,11 @@
         <module>obfuscatedids-core</module>
         <module>obfuscatedids-hashid</module>
         <module>obfuscatedids-spring</module>
+        <module>obfuscatedids-examples-spring</module>
     </modules>
     <packaging>pom</packaging>
-    
-    <name>${project.groupId}:${project.artifactId}</name>
+
+    <name>${project.artifactId}</name>
     <description>obfuscatedids: avoid exposing your internal IDs.</description>
     <url>https://github.com/danidemi/obfuscated-ids</url>
 
@@ -29,6 +30,7 @@
             <organizationUrl>http://www.danidemi.com</organizationUrl>
         </developer>
     </developers>
+
     <scm>
         <connection>scm:git:https://github.com/danidemi/obfuscated-ids</connection>
         <developerConnection>scm:git:https://github.com/danidemi/obfuscated-ids</developerConnection>
