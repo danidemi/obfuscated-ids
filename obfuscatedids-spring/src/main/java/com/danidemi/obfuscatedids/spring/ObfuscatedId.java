@@ -1,8 +1,9 @@
 package com.danidemi.obfuscatedids.spring;
 
+/** An obfuscated ID. */
 public final class ObfuscatedId extends AbstractCharSequence {
 
-    public ObfuscatedId(String obfuscatedId) {
+    ObfuscatedId(String obfuscatedId) {
         super(obfuscatedId);
     }
 

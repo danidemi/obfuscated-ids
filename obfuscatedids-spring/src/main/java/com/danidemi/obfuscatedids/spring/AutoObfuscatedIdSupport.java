@@ -25,7 +25,10 @@
 package com.danidemi.obfuscatedids.spring;
 
 import com.danidemi.obfuscatedids.core.IdObfuscator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.format.Formatter;
+import org.springframework.web.bind.WebDataBinder;
 
 import java.beans.PropertyEditorSupport;
 import java.text.ParseException;
@@ -34,6 +37,7 @@ import java.util.Locale;
 public class AutoObfuscatedIdSupport extends PropertyEditorSupport implements Formatter<AutoObfuscatedId> {
 
     private final IdObfuscator obfuscator;
+    private static final Logger log = LoggerFactory.getLogger(AutoObfuscatedIdSupport.class);
 
     public AutoObfuscatedIdSupport(final IdObfuscator obfuscator) {
         if(obfuscator == null) throw new IllegalArgumentException();
@@ -61,5 +65,16 @@ public class AutoObfuscatedIdSupport extends PropertyEditorSupport implements Fo
     @Override
     public String print(AutoObfuscatedId obfuscatedId, Locale locale) {
         return obfuscatedId.toString();
+    }
+
+    public static final void registerCustomEditor(final WebDataBinder binder, final IdObfuscator obfuscator) {
+        if(binder == null) throw new IllegalArgumentException();
+        if(obfuscator == null) throw new IllegalArgumentException();
+
+        Class<AutoObfuscatedId> theClazz = AutoObfuscatedId.class;
+        AutoObfuscatedIdSupport propertyEditor = new AutoObfuscatedIdSupport(obfuscator);
+
+        binder.registerCustomEditor(theClazz, propertyEditor);
+        log.info("Registered {} to support parameters of type {}.", propertyEditor, theClazz);
     }
 }

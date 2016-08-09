@@ -24,11 +24,12 @@
 
 package com.danidemi.obfuscatedids.spring;
 
+/** An obfuscate ID that can be converted back to its original value. */
 public final class AutoObfuscatedId extends AbstractCharSequence {
 
     private final long id;
 
-    public AutoObfuscatedId(String obfuscatedId, long id) {
+    AutoObfuscatedId(String obfuscatedId, long id) {
         super(obfuscatedId);
         this.id = id;
     }
