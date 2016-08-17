@@ -41,7 +41,7 @@ It exposes a service that can be invoked like that...
         
 But `obfuscatedId.id()` will return the corresponding numeric `ID`.
 
-## Installation
+## Quick Start
 
 Add the following Maven dependency
 
@@ -50,6 +50,8 @@ Add the following Maven dependency
         <artifactId>obfuscatedids-spring</artifactId>
         <version>0.0.1</version>
     </dependency>
+    
+> [!] Please, [check on Maven Central the latest version](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.danidemi.obfuscatedids%22).
     
 Configure an `IdObfuscator`. 
 
