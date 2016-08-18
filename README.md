@@ -3,10 +3,22 @@
 
 Obfuscated-IDs
 ==============
-Never expose your database IDs again.
+
+<table>
+    <tr>
+        <td align="center">
+            <img src="https://raw.githubusercontent.com/danidemi/obfuscated-ids/master/logo.png" />
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            Undisclose IDs with <i>Obfuscated-IDs</i>
+        </td>
+    </tr>    
+</table>
 
 _Obfuscated-IDs_ is a java open-source library that allows you to easily
-avoid to expose the internal IDs of your database.
+avoid to expose the internal IDs of your database at web level.
 
 _Obfuscated-IDs_ is based on: 
 * [hashids](http://hashids.org/)
