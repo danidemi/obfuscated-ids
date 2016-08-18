@@ -5,18 +5,20 @@
 Obfuscated-IDs
 ==============
 
-<table>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/danidemi/obfuscated-ids/master/logo.png" />
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            Undisclose IDs with <i>Obfuscated-IDs</i>
-        </td>
-    </tr>    
-</table>
+<p align="center">
+    <table>
+        <tr>
+            <td align="center">
+                <img src="https://raw.githubusercontent.com/danidemi/obfuscated-ids/master/logo.png" />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                Undisclose IDs with <i>Obfuscated-IDs</i>
+            </td>
+        </tr>    
+    </table>
+</p>
 
 _Obfuscated-IDs_ is a java open-source library that allows you to easily
 avoid to expose the internal IDs of your database at web level.
@@ -25,7 +27,10 @@ _Obfuscated-IDs_ is based on:
 * [hashids](http://hashids.org/)
 * [hashids.java](https://github.com/jiecao-fm/hashids-java)
 
-## Overview
+
+
+Overview
+--------
 
 With a _Spring Framework_ and _Obfuscated-IDs_ i's possible to write a `@Controller`
 that automatically allows the code to use the real numeric `ID` while it is always 
@@ -54,7 +59,10 @@ It exposes a service that can be invoked like that...
         
 But `obfuscatedId.id()` will return the corresponding numeric `ID`.
 
-## Quick Start
+
+
+Quick Start
+-----------
 
 Add the following Maven dependency
 
