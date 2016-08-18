@@ -114,12 +114,12 @@ Write your controller.
     }
 
 
-Maven
------
+Deploy
+------
 
-### maven-gpg-plugin
+### Maven GPG Plugin
 
-Check if GPG is correctly set up executing the following commnad.
+Make sure GPG is correctly set up executing the following commnad.
 
     mvn gpg:sign
     
@@ -138,8 +138,32 @@ Rerun again `mvn gpg:sign` to check all is in place.
     
     
     
+### Sonatype OSS Repository Hosting
 
+Make sure the _Sonatype OSS Repository Hosting_ is properly set up
+checking that the Maven's `settings.xml` contains a reference to it. 
+
+    cat ${user.home}/.m2/settings.xml
+
+You should see something like that...
+
+    <server>
+        <id>ossrh</id>
+        <username>YOUR-OSSRH-USERNAME-HERE</username>
+        <password>YOUR-OSSRH-PASSWORD-HERE</password>
+    </server>
     
+    
+    
+### Deploy A New Release
+
+To deploy it should be enough to issue the following commands.
+
+    mvn clean release:clean 
+    mvn release:prepare
+    mvn release:perform
+
+
 
 References
 ----------
