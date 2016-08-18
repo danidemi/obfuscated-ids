@@ -1,7 +1,7 @@
 
 ![Build status on https://travis-ci.com/](https://api.travis-ci.org/danidemi/obfuscated-ids.svg)
-![Code Climate](https://codeclimate.com/github/danidemi/obfuscated-ids/badges/gpa.svg)
-![Issue Count](https://codeclimate.com/github/danidemi/obfuscated-ids/badges/issue_count.svg)
+[![Code Climate](https://codeclimate.com/github/danidemi/obfuscated-ids/badges/gpa.svg)](https://codeclimate.com/github/danidemi/obfuscated-ids)
+[![Issue Count](https://codeclimate.com/github/danidemi/obfuscated-ids/badges/issue_count.svg)](https://codeclimate.com/github/danidemi/obfuscated-ids)
 
 
 Obfuscated-IDs
