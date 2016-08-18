@@ -112,3 +112,45 @@ Write your controller.
     public String getUser(@PathVariable AutoObfuscatedId obfuscatedDbId) {
         ...
     }
+
+
+Maven
+-----
+
+### maven-gpg-plugin
+
+Check if GPG is correctly set up executing the following commnad.
+
+    mvn gpg:sign
+    
+If that returns this error...
+
+    gpg: no default secret key: unusable secret key
+    gpg: signing failed: unusable secret key
+
+...then A GPG key is needed. 
+If one is available you can import it with...
+    
+    gpg --import ~/mygpgkey_pub.gpg
+    gpg --allow-secret-key-import --import ~/mygpgkey_sec.gpg
+    
+Rerun again `mvn gpg:sign` to check all is in place.
+    
+    
+    
+
+    
+
+References
+----------
+
+__Projects__
+* [hashids](http://hashids.org/)
+* [hashids.java](https://github.com/jiecao-fm/hashids-java)
+* [Optimus](https://github.com/jenssegers/optimus)
+
+__Manuals__
+* [Maven GPG Plugin](https://maven.apache.org/plugins/maven-gpg-plugin/plugin-info.html)
+
+__Posts__
+* [Import GPG Key Pair](https://www.debuntu.org/how-to-importexport-gpg-key-pair/)
