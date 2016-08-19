@@ -1,6 +1,7 @@
 
 ![Build status on https://travis-ci.com/](https://api.travis-ci.org/danidemi/obfuscated-ids.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c7d97eb70d0e4a3eb9dad3c9b5ff67ec)](https://www.codacy.com/app/demichelis/obfuscated-ids?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=danidemi/obfuscated-ids&amp;utm_campaign=Badge_Grade)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.danidemi.obfuscatedids/obfuscatedids/badge.png)](https://maven-badges.herokuapp.com/maven-central/com.danidemi.obfuscatedids/obfuscatedids)
 
 Obfuscated-IDs
 ==============
@@ -73,6 +74,7 @@ Add the following Maven dependency
     </dependency>
     
 > [!] Please, [check on Maven Central the latest version](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.danidemi.obfuscatedids%22).
+> [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.danidemi.obfuscatedids/obfuscatedids/badge.png)](https://maven-badges.herokuapp.com/maven-central/com.danidemi.obfuscatedids/obfuscatedids)
     
 Configure an `IdObfuscator`. 
 
@@ -171,7 +173,13 @@ References
 __Projects__
 * [hashids](http://hashids.org/)
 * [hashids.java](https://github.com/jiecao-fm/hashids-java)
+* [obfuscate](https://github.com/mguymon/obfuscate)
+* [obfuscate](https://github.com/ternus/obfuscate)
+* [Obfuscate](https://github.com/UseMuffin/Obfuscate)
+* [Obfuscated](https://github.com/imnotquitejack/obfuscated)
 * [Optimus](https://github.com/jenssegers/optimus)
+* [obfuscate_id](https://github.com/namick/obfuscate_id)
+    * explains why you would want obfuscated IDs.
 
 __Manuals__
 * [Maven GPG Plugin](https://maven.apache.org/plugins/maven-gpg-plugin/plugin-info.html)
