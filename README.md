@@ -177,6 +177,7 @@ __Projects__
 * [obfuscate](https://github.com/ternus/obfuscate)
 * [Obfuscate](https://github.com/UseMuffin/Obfuscate)
 * [Obfuscated](https://github.com/imnotquitejack/obfuscated)
+* [opaque-id](https://github.com/marekweb/opaque-id)
 * [Optimus](https://github.com/jenssegers/optimus)
 * [obfuscate_id](https://github.com/namick/obfuscate_id)
     * explains why you would want obfuscated IDs.
